@@ -12,7 +12,7 @@ import routes from './routes/routes';
 let isProduction = process.env.NODE_ENV === 'production';
 
 if (isProduction) {
-    mongoose.connect(process.env.MONGODB_URI);
+    mongoose.connect('mongodb://heroku_gx2dbf51:<dbpassword>@ds235785.mlab.com:35785/heroku_gx2dbf51');
 } else {
     mongoose.connect('mongodb://localhost:27017/storeApp');
     console.log('db connected');
