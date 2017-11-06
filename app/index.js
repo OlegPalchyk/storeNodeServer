@@ -1,5 +1,5 @@
 import app from './app';
-
+import antiSleep from './herokuSleep';
 const PORT = process.env.PORT || 5000;
 
 
@@ -14,7 +14,7 @@ if (app.get('env') === 'development') {
         );
     });
 }
-
+antiSleep();
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
