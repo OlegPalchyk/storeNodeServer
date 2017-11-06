@@ -16,3 +16,11 @@ exports.addNew = function(req, res) {
         res.json({prod});
     });
 };
+
+exports.getOne = (req, res)=>{
+    Product.findOne({_id : req.params.id}, function(err, product) {
+        if (err)
+            res.send(err);
+        res.json({product});
+    });
+};

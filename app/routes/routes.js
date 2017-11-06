@@ -7,5 +7,8 @@ let routes =  (app) =>{
         .get(products.getAll)
         .post(products.addNew);
 
+    app.route('/api/:id')
+        .get(products.getOne);
+
 };
 export default routes;
