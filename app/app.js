@@ -4,6 +4,7 @@ import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 
+
 //db
 import mongoose from 'mongoose';
 
@@ -30,12 +31,14 @@ const app = express();
 
 app.set('view engine', 'html');
 app.use(logger('dev'));
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 app.use(cookieParser());
 
 // Priority serve any static files.
 app.use(express.static(path.resolve(__dirname, '../../', 'client/build')));
+app.use('/upload',express.static(__dirname + '/upload'));
+
 routes(app);
 
 // All remaining requests return the React app, so it can handle routing.

@@ -7,7 +7,7 @@ let ProductsSchema = new Schema({
     description: {type : String, required : true},
     price: { type: Number, required: true},
     title: { type: String, required: true },
-    url: { type: String, required: true },
+    images: { type: Array, required: true },
 });
 
 // the schema is useless so far
